@@ -46,10 +46,9 @@ This is refreshable because Firebase Remote Configs can be refresh programmatica
 - Provider of Feature Flags own by the backend. These feature flags are based on business logic.
 The one implemented in this repository is purely fictional. A real world implementation might look very different.
 #### Local Feature Flag Provider
-- Provides all possible feature flags in the system. This include [RemoteConfigFlag], [ServerFlag]
-and its own [DebugConfig]. This is the priority feature flag provider for a Debug build
-It has the ability to enable [FirebaseFeatureFlagProvider] and [ServerFeatureFlagProvider] and when
+- Provides all possible feature flags in the system. This include `RemoteConfigFlag`, `ServerFlag`
+and its own `DebugConfig`. This is the priority feature flag provider for a Debug build
+It has the ability to enable `FirebaseFeatureFlagProvider` and `ServerFeatureFlagProvider` and when
 that's the case, the flags provided by those provider are just ignored (excluded)
-
-This provider is the one that is used to build and auto-generate the debug menu
-It is [UpdatableFeatureFlagProvider] because these flags can be turned on/off from the debug menu
+- This provider is the one that is used to build and auto-generate the debug menu
+- It is `UpdatableFeatureFlagProvider` because these flags can be turned on/off from the debug menu
