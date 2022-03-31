@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.featureflagdebugmenu.CatalogUi
-import com.example.featureflagdebugmenu.FeatureFlagAction
+import com.example.featureflagdebugmenu.ui.CatalogUi
+import com.example.featureflagdebugmenu.ui.FeatureFlagAction
 import com.example.featureflagdebugmenu.ui.theme.FeatureFlagDebugMenuTheme
 import kotlinx.coroutines.channels.Channel
 

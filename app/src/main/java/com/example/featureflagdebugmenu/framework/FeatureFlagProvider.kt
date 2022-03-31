@@ -12,10 +12,16 @@ interface FeatureFlagProvider {
     fun hasFeature(feature: Feature): Boolean
 }
 
+/**
+ * For flag providers that are refreshable i.e [FirebaseFeatureFlagProvider]
+ */
 interface RefreshableFeatureFlagProvider {
     fun refreshFeatureFlags()
 }
 
+/**
+ * For flag providers that are updatable on Device i.e [LocalFeatureFlagProvider]
+ */
 interface UpdatableFeatureFlagProvider {
     fun updateFeature(feature: Feature, isEnabled: Boolean)
 }

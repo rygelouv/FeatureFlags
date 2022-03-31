@@ -2,6 +2,7 @@ package com.example.featureflagdebugmenu
 
 import com.example.featureflagdebugmenu.framework.Feature
 import com.example.featureflagdebugmenu.framework.LocalFeatureFlagProvider
+import com.example.featureflagdebugmenu.ui.FeatureUi
 import javax.inject.Inject
 
 /**

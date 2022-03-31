@@ -1,7 +1,8 @@
-package com.example.featureflagdebugmenu.framework
+package com.example.featureflagdebugmenu.framework.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.featureflagdebugmenu.framework.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.BuildConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig

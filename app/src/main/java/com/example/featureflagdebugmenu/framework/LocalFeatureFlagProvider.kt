@@ -1,8 +1,20 @@
 package com.example.featureflagdebugmenu.framework
 
 import android.content.SharedPreferences
+import com.example.featureflagdebugmenu.framework.di.FeatureFlagsSharedPreferences
 import javax.inject.Inject
 
+/**
+ * Provides all possible feature flags in the system. This include [RemoteConfigFlag], [ServerFlag]
+ * and its own [DebugConfig]. This is the priority feature flag provider for a Debug build
+ * It has the ability to enable [FirebaseFeatureFlagProvider] and [ServerFeatureFlagProvider] and when
+ * that's the case, the flags provided by those provider are just ignored (excluded)
+ *
+ * This provider is the one that is used to build and auto-generate the debug menu
+ * It is [UpdatableFeatureFlagProvider] because these flags can be turned on/off from the debug menu
+ *
+ * @param preferences this provider relies on [SharedPreferences] to store feature flags
+ */
 class LocalFeatureFlagProvider @Inject constructor(
     @FeatureFlagsSharedPreferences private val preferences: SharedPreferences
 ) : FeatureFlagProvider, UpdatableFeatureFlagProvider {

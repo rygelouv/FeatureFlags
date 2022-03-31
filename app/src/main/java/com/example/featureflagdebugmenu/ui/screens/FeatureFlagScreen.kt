@@ -13,9 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.featureflagdebugmenu.FeatureFlagAction
-import com.example.featureflagdebugmenu.FeatureFlagScreen
-import com.example.featureflagdebugmenu.FeatureUi
+import com.example.featureflagdebugmenu.ui.FeatureFlagAction
+import com.example.featureflagdebugmenu.ui.FeatureFlagScreen
+import com.example.featureflagdebugmenu.ui.FeatureUi
 import com.example.featureflagdebugmenu.ui.theme.FeatureFlagDebugMenuTheme
 import com.example.featureflagdebugmenu.ui.theme.GreenLight
 

@@ -1,4 +1,4 @@
-package com.example.featureflagdebugmenu
+package com.example.featureflagdebugmenu.ui
 
 enum class Route(val routeName: String) {
     CATALOGS("flags_catalog"),
@@ -60,7 +60,7 @@ enum class CatalogUi(
 ) {
     FEATURES(
         label = "Feature Flags",
-        description = "All the feature flags in that can remotely enabled"
+        description = "All the feature flags that can be remotely enabled"
     ),
     DEBUG_CONFIG(
         label = "Debug Configs",

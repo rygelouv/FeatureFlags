@@ -4,6 +4,12 @@ import android.util.Log
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import javax.inject.Inject
 
+/**
+ * Provider of feature flags set up on Firebase Remote Config. Usually used in production for toggling
+ * mobile feature. Used by both mobile engineers and product managers
+ *
+ * This is refreshable because Firebase Remote Configs can be refresh programmatically from the app code
+ */
 class FirebaseFeatureFlagProvider @Inject constructor(
     private val remoteConfig: FirebaseRemoteConfig
 ) : FeatureFlagProvider, RefreshableFeatureFlagProvider {
@@ -50,6 +56,7 @@ enum class RemoteConfigFlag(
 
     companion object {
         fun toMap(): Map<String, Boolean> = values().associate { it.key to it.defaultValue }
+
         fun getOrNull(key: String): RemoteConfigFlag? = values().find { it.key == key }
     }
 }

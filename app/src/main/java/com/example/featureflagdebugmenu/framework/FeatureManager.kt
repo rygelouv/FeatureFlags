@@ -3,10 +3,13 @@ package com.example.featureflagdebugmenu.framework
 import com.example.featureflagdebugmenu.BuildConfig
 import java.util.concurrent.CopyOnWriteArrayList
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
- * Check whether a feature should be enabled or not. Based on the priority of the different providers and if said
- * provider explicitly defines a value for that feature, the value of the flag is returned.
+ * Check whether a feature is enabled or not. Will first look into the providers to see which one has the feature
+ * Normally, based on how the framework is built, two provider should provide the same feature flag at the same time
+ * That would be a violation of the design. Each provider should provider a pool of feature flags that are different
+ * from what the providers are providing.
  */
 interface FeatureManager {
     fun initialize()
@@ -17,6 +20,7 @@ interface FeatureManager {
     fun clearFeatureFlagProviders()
 }
 
+@Singleton
 class FeatureManagerImpl @Inject constructor(
     private val firebaseFeatureFlagProvider: FirebaseFeatureFlagProvider,
     private val serverFeatureFlagProvider: ServerFeatureFlagProvider,

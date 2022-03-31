@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.featureflagdebugmenu.FeatureFlagAction
+import com.example.featureflagdebugmenu.ui.FeatureFlagAction
 import kotlinx.coroutines.channels.Channel
 
 @Composable
@@ -32,7 +32,7 @@ fun RestartConfirmationDialog(showDialog: Boolean, actionChannel: ActionChannel)
             text = {
                 Text(
                     text = "Are you sure you want to change update these feature flags?" +
-                            " \n this will restart the app"
+                            "\nThis will restart the app"
                 )
             }
         )

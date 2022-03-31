@@ -45,7 +45,6 @@ class FeatureFlagViewModel @Inject constructor(
             is FeatureFlagAction.FeatureUpdatedAction -> onFeatureUpdated(it.feature, it.isEnabled)
             FeatureFlagAction.ChangesApplied -> onChangesApplied()
             FeatureFlagAction.SaveUpdates -> saveUpdates()
-            else -> {}
         }
     }
 

@@ -4,7 +4,7 @@ import com.example.featureflagdebugmenu.framework.*
 
 /**
  * For use during unit/instrumentation tests, allows to dynamically enable/disable features
- * during automated tests
+ * during automated tests.
  */
 object TestFeatureFlagProvider : FeatureFlagProvider, UpdatableFeatureFlagProvider {
 

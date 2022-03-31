@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
-import com.example.featureflagdebugmenu.FeatureFlagAction
+import com.example.featureflagdebugmenu.ui.FeatureFlagAction
 import com.example.featureflagdebugmenu.ui.FeatureFlagViewModel
 import com.example.featureflagdebugmenu.ui.NavigationComponent
 import com.example.featureflagdebugmenu.ui.Navigator

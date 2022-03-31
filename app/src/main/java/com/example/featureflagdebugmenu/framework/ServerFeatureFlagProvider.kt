@@ -6,6 +6,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
+/**
+ * Provider of Feature Flags own by the backend. These feature flags are based on business logic.
+ * This is purely fictional. A real world implementation might look very different.
+ *
+ *@param api the server api object. Used to get the data from the backend.
+ */
 class ServerFeatureFlagProvider @Inject constructor(private val api: ServerApi) :
     FeatureFlagProvider {
 
@@ -26,6 +32,9 @@ class ServerFeatureFlagProvider @Inject constructor(private val api: ServerApi) 
     }
 }
 
+/**
+ * Representation of a Server side feature flag
+ */
 enum class ServerFlag(
     override val key: String,
     override val title: String,
@@ -44,6 +53,15 @@ enum class ServerFlag(
     }
 }
 
+@Module
+@InstallIn(SingletonComponent::class)
+interface AnswerBuilderModule {
+
+    @Binds
+    fun ServerApiImpl.provideAnswerFlowBuilder(): ServerApi
+}
+
+
 data class User(
     val id: String,
     val isBanned: Boolean,
@@ -61,12 +79,4 @@ class ServerApiImpl @Inject constructor() : ServerApi {
         isBanned = false,
         isPep = true
     )
-}
-
-@Module
-@InstallIn(SingletonComponent::class)
-interface AnswerBuilderModule {
-
-    @Binds
-    fun ServerApiImpl.provideAnswerFlowBuilder(): ServerApi
 }
