@@ -11,6 +11,9 @@ This work is inspired and is an update and improvement (in my opinion) of the or
 - Several class were renamed and completely re-imagined
 - TestFeatureFlagProvider moved to test source set and configured to easily enable or disable feature but still used with FeatureManager
 - FeatureManager will be used in Test but a different instance will be injected. The test instance will remove all the other providers and keep only TestFeatureFlagProvider
+- Removed the priority system as it was ambiguous and was adding complexity
+- Added an exclusion system to enforce uniqueness of Flags provider by provider
+- Created specific types of feature flags for each provider except Local provider which can provider feature from other providers in debug mode.
 
 ## Screenshots
 <p align="center">
