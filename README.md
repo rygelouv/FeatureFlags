@@ -17,7 +17,7 @@ This work is inspired and is an update and improvement (in my opinion) of the or
 <img src="https://github.com/rygelouv/FeatureFlags/blob/main/screenshot-1648756729152.png" width="200">   <img src="https://github.com/rygelouv/FeatureFlags/blob/main/screenshot-1648756740397.png" width="200">   <img src="https://github.com/rygelouv/FeatureFlags/blob/main/screenshot-1648756748689.png" width="200">
 </p>
 
-## Code details
+## Architecture implementation
 
 ### Feature
 - A Feature uniquely identifies a part of the app code that can either be enabled or disabled.
@@ -36,14 +36,14 @@ value for every feature. (e.g. no "Remote Config tool" configuration needed, unl
   from what the providers are providing.
 
 #### Firebase Feature Flag Provider
-Provider of feature flags set up on Firebase Remote Config. Usually used in production for toggling
+- Provider of feature flags set up on Firebase Remote Config. Usually used in production for toggling
 mobile feature. Used by both mobile engineers and product managers
 This is refreshable because Firebase Remote Configs can be refresh programmatically from the app code
 #### Server Feature Flag Provider
-Provider of Feature Flags own by the backend. These feature flags are based on business logic.
+- Provider of Feature Flags own by the backend. These feature flags are based on business logic.
 The one implemented in this repository is purely fictional. A real world implementation might look very different.
 #### Local Feature Flag Provider
-Provides all possible feature flags in the system. This include [RemoteConfigFlag], [ServerFlag]
+- Provides all possible feature flags in the system. This include [RemoteConfigFlag], [ServerFlag]
 and its own [DebugConfig]. This is the priority feature flag provider for a Debug build
 It has the ability to enable [FirebaseFeatureFlagProvider] and [ServerFeatureFlagProvider] and when
 that's the case, the flags provided by those provider are just ignored (excluded)
