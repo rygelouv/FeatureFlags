@@ -1,6 +1,7 @@
 # Feature Flags Debug Menu
-
-<img src="https://github.com/rygelouv/FeatureFlags/blob/main/on-button.png" width="200">
+<p align="center">
+  <img src="https://github.com/rygelouv/FeatureFlags/blob/main/on-button.png" width="200">
+</p>
 
 Feature Flags are essential for software development and release management
 
