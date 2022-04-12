@@ -42,7 +42,7 @@ class FirebaseFeatureFlagProvider @Inject constructor(
  * Note that this has nothing to do with being available as a remote feature flag or not. Some features
  * will be deployed using our feature flag tool, some will not.
  *
- * [key] Shared between Android and iOS featureflag backend
+ * [key] Shared between Android and iOS
  */
 enum class RemoteConfigFlag(
     override val key: String,

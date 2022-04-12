@@ -52,3 +52,6 @@ It has the ability to enable `FirebaseFeatureFlagProvider` and `ServerFeatureFla
 that's the case, the flags provided by those provider are just ignored (excluded)
 This provider is the one that is used to build and auto-generate the debug menu
 It is `UpdatableFeatureFlagProvider because these flags can be turned on/off from the debug menu
+
+## Inspired by
+- https://jeroenmols.com/blog/2019/09/12/featureflagsarchitecture/

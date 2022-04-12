@@ -39,6 +39,9 @@ class FeatureFlagViewModel @Inject constructor(
         loadFlagCatalogs()
     }
 
+    /**
+     * Process each Action individually and perform the right operation accordingly
+     */
     private fun Flow<FeatureFlagAction>.process() = onEach {
         when (it) {
             is FeatureFlagAction.CatalogClickedAction -> onCatalogClicked(it.catalog)
@@ -71,6 +74,9 @@ class FeatureFlagViewModel @Inject constructor(
         navigator.navigateTo(state.flagsScreen)
     }
 
+    /**
+     * Called when a user has changed the state (on/off) of flag
+     */
     private fun onFeatureUpdated(feature: FeatureUi, isEnabled: Boolean) {
         val screen = (state.flagsScreen as? FeatureFlagScreen.FlagScreen) ?: return
         screen.flags.find { it.key == feature.key }?.isEnabled = isEnabled
